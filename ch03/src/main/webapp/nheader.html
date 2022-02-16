@@ -15,10 +15,13 @@ body {
 }
 
 .header {
-	width : 630px;
+	width : 720px;
 	height : 100px;
 	margin : 50px auto;
 	background-color : #ddd;
+}
+.header .logo, .header .search-box {
+	float : left;
 }
 
 .header .logo {
@@ -29,10 +32,53 @@ body {
 }
 
 .search-box {
-	width : 400px;
+	width : 470px;
 	height : 52px;
-	
 	background-color : #ccc;
+	margin-right : 20px;
+	border : 1px solid #202020;
+}
+
+.search-box input, .search-box a {
+	display : block;
+	float : left;
+}
+
+.search-box input, .search-box .btn-search, .search-box a {
+	float : right;
+}
+
+.search-box input {
+	width : 290px;
+	height : 52px;
+	border : none;
+
+}
+
+.search-box #keyboard {
+	margin : 15px;
+	font-size : 0;
+	width : 20px;
+	height : 12px;
+	background : url("/ch03/images/naver_images.png") no-repeat -420px -395px / 457px 434px;
+}
+
+.search-box #dropdown {
+	margin : 15px;
+	font-size : 0;
+	width : 10px;
+	height : 5px;
+	background : url("/ch03/images/naver_images.png") no-repeat -408px -77px / 457px 434px;
+}
+
+.btn-search button {
+	margin : 15px;
+	font-size : 0;
+	width : 22px;
+	height : 22px;
+	background : url("/ch03/images/naver_images.png") no-repeat -420px 0px / 457px 434px;
+	background-color : #19ce60;
+	border : none;
 }
 
 </style>
@@ -41,10 +87,12 @@ body {
 	<div class = "header">
 		<h1 class = "logo">네이버</h1>
 		<form class = "search-box">
-			<input type = "text" />
-			<a href = "#">키보드</a>
-			<a href = "#">드롭다운</a>
-			<button>돋보기</button>
+				<div class = "btn-search">
+					<button>돋보기</button>
+				</div>
+				<a href = "#" id = "dropdown">드롭다운</a>
+				<a href = "#" id = "keyboard">키보드</a>
+				<input type = "text" />
 		</form>
 	</div>
 </body>
