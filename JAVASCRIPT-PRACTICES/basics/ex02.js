@@ -25,6 +25,13 @@
 
 /*
     자바스크립트 객체를 구분하는 또 다른 방법
+    1. 내장(Built-in, Native, Engine) 객체
+        자바스크립트 엔진 안에 미리 내장되어 있는 객체
+        Number, Boolean, Date, F=RegExp, ... : 생성자 함수
+        SetTimeout,parseInt, ... : 일반 함수
+    2. 호스트 객체
+    3. 사용자 객체
+
 */
 
 console.log("=====기본타입(primitive, 원시)=====");
