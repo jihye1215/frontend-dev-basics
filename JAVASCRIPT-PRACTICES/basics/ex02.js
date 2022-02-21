@@ -14,6 +14,8 @@
         Boolean() => object type
         Object() => object type
         Array() => object type
+        Date() => object type
+        Function() => object type
     2. {} 객체 리터럴, JSON(JavaScriptObjectNotation)
     3. [] 배열 리터럴
     4. null
