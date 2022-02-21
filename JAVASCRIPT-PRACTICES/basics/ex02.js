@@ -30,6 +30,9 @@
         Number, Boolean, Date, F=RegExp, ... : 생성자 함수
         SetTimeout,parseInt, ... : 일반 함수
     2. 호스트 객체
+        자바스크립트 엔진이 임베디드 된 환경(호스트)의 객체
+        - 호스트 환경이 브라우저
+        - 호스트 환경이 노드(Node.js)
     3. 사용자 객체
 
 */
