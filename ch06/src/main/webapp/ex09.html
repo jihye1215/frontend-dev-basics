@@ -7,19 +7,21 @@
 window.addEventListener("load", function() {
 	var imgElement = document.createElement("img");
 	
-	// 속성(Attribute)을 읽기/쓰기 위해서 setAttribute/getAttribute를 사용한다.
+	// (표준[property O] + 비표준[property X]) 속성(Attribute)을 읽기/쓰기 위해서 setAttribute/getAttribute를 사용한다.(setAttribute/getAttribute은 property를 읽기 위한 것이 아니다.)
 	imgElement.setAttribute('src', 'https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/966/c5caa26294d3e0de6e427cb243007b16_res.jpeg');
 	imgElement.setAttribute('style', 'width: 200px');
 	imgElement.setAttribute('alt', "재롱이~");
 	imgElement.setAttribute('title', "재롱이~~");
 	
 	imgElement['no'] = 10; 					   // property
-	imgElement.setAttribute('data-name', 'jihye');  // 비표준 속성 사용 시 data-prefix를 달아준다.
+	imgElement.setAttribute('data-name', 'jihye');  // 비표준 속성 : property X
+													// 비표준 속성 사용 시 data-prefix를 달아준다.
 	
 	setTimeout(function() {
 		document.body.appendChild(imgElement);
 		console.log(imgElement['no']/*property*/, imgElement.getAttribute('no')/*attribute*/);
-		console.log(imgElement.alt, imgElement['data-name']);
+		console.log(imgElement.alt, imgElement['data-name'], imgElement.getAttribute('data-name'));
+		// 비표준 속성은 property가 아니니까 .으로 접근할 수 없고 imgElement.getAttribute('data-name') 이런식으로 접근해야한다!
 	}, 2000);
 });
 </script>

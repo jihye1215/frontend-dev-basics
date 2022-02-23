@@ -3,19 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+/*
+ Event Propagation(Event Bubbling)
+ 특정 이벤트가 발생했을 때, 그 이벤트가 상위/하위 엘리먼트로 전파되어 가는 것
+ <= IE8 	     : outter-div > inner-div > header > text
+ standard others : outter-div < inner-div < header < text
+ */
+</script>
+<script>
+/*
+
+기본 이벤트 핸들러 동작 막기
+1. anchor : 버튼이나 메뉴로 사용하는 경우(click event)
+2. form : validation(submit event)
+
+*/
+
+window.addEventListener('load', function(){
+   var form = document.getElementById("form-login");
+   
+   form.addEventListener('submit', function(){
+      event.preventDefault();
+      
+      // API
+      var inputEmail = document.getElementById('input-email');
+      
+      if(inputEmail.value == ''){
+         alert('이메일이 비어있습니다.');
+         inputEmail.focus();
+         return;
+      }
+   
+      var inputPassword = document.getElementById('input-password');
+      
+      if(inputPassword.value == ''){
+         alert('비밀번호가 비어있습니다.');
+         inputPassword.focus();
+         return;
+      }
+      
+      // validation success
+      //console.log(this); 
+      this.submit();
+      
+      // level 0방식의 this는 window
+      // level 2방식의 this는 element
+      
+   });
+});
+
+</script>
 </head>
 <body>
-	<h1>DOM(Document Object Model)</h1>
-	<h2>6. 기본(default) Event Hanlder 동작 막기 - 2. form: DOM Event Model Level2</h2>
-	
-	<form id='form-login' method='post' action='/user/auth'>
-		<input type='text' name='email' id='input-email' placeholder='이메일'/>
-		<br/><br/>
+   <h1>DOM(Document Object Model)</h1>
+   <h2>6. 기본(default) Event Hanlder 동작 막기 - 2. form: DOM Event Model Level2</h2>
+   
+   <form id='form-login' method='post' action='/user/auth'>
+      <input type='text' name='email' id='input-email' placeholder='이메일'/>
+      <br/><br/>
 
-		<input type='password' name='password' id='input-password' placeholder='비밀번호'/>
-		<br/><br/>
-		
-		<input type='submit' value='로그인' />
-	</form>
+      <input type='password' name='password' id='input-password' placeholder='비밀번호'/>
+      <br/><br/>
+      
+      <input type='submit' value='로그인' />
+   </form>
 </body>
 </html>
