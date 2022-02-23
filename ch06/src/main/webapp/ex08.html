@@ -3,9 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+window.addEventListener("load", function() {
+	var imgElement = document.createElement("img");
+	imgElement.src = 'https://w.namu.la/s/8391d1ab668366af95aedeb657eb2140d99cf24835706016445481cc474ea407b8d44749a0f50f0d86b698c2446234e6d3f2c0b6efab2454c05f50394f0d0f600b74e38c7187faaef354e6fba2acfb1a';
+	imgElement.style.width = "200px";
+	imgElement.alt = "재롱이~";
+	imgElement.title = "재롱이~~";
+	
+	setTimeout(function() {
+		document.body.appendChild(imgElement);
+	}, 2000);
+});
+</script>
 </head>
 <body>
 	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>
 	<h2>3. HTML Element 속성 조작하기1</h2>
+	<img src = '' style = ''>
 </body>
 </html>
