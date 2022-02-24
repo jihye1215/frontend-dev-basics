@@ -6,12 +6,20 @@
 <script type="text/javascript">
 $(function() {
 	setTimeout(function(){
+		$("h2, p")
+			.wrapAll("<div>")
+			.parent()          // traverse API -> 이것(h2, p)의 부모가 나온다 -> div
+			.css({             // div에 css를 준다.
+				border : "2px solid #ccc",
+				width : "200px",
+				padding : "10px"
+			});
 	}, 2000);
 });  
 </script>
 </head>
 <body>
-	<h1>DOM 조작 API - wrapAll()</h1>
+	<h1>DOM 조작 API - wrapAll() : 전체를 감싼다.</h1>
 	
 	<h2>타이틀입니다.</h2>
 	<p>내용입니다.</p>

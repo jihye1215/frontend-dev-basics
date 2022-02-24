@@ -6,13 +6,16 @@
 <script>
 $(function(){
 	setTimeout(function(){
-		
+		$(".d1").wrap("<h2>");
+		$(".d2")
+			.wrap("<h3>")
+			.css("padding-left", "50px");
 	}, 1000);
 });
 </script>
 </head>
 <body>
-	<h1>DOM 조작 API - wrap()</h1>
+	<h1>DOM 조작 API - wrap() : 감싼다</h1>
 
 	<em class="d1">1장</em>
 	<em class="d2">1-1 절</em>
