@@ -6,6 +6,10 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("#p1").text("1.안녕하세요");
+		$("#p2").text("2.<strong>안녕하세요</strong>");  // 이게 그대로 화면에 나온다. -> < : &lt; > : &gt; & : &amp;
+		console.log($("#p3").text());  // 파라미터 없이 하면 그냥 안에 있는 내용을 return 한다.
+		console.log($("#p4").text());
 	}, 1000);
 });
 </script>
@@ -21,7 +25,7 @@ $(function(){
 		HTML의 escape 문자들
 		& -> &amp;
 		space -> &nbsp;
-		< -> &lth;
+		< -> &lt;
 		> -> &gt;
 		' -> &quot;
 	-->

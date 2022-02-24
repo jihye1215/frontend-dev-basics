@@ -6,6 +6,8 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("#second + li").css("color", "red");  // +는 옆에꺼를 말한다. second의 옆에 있는 li 라는 의미
+		$("#second + li + li").css("color", "red");
 	}, 1000);
 });
 </script>
