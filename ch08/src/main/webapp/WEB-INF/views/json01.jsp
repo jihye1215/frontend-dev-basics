@@ -17,6 +17,7 @@ $(function() {
 			type : 'get',
 			dateType : 'json',
 			success : function(response) {
+				console.log(response);
 				if(response.result !== "success") {
 					console.error(response.message);
 					return;
