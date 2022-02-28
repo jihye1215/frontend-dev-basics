@@ -11,11 +11,19 @@
 <script>
 $(function() {
 	$("button").click(function() {
+		var vo = {
+			name : '둘리',
+			password : '1234',
+			message: '호이~'
+		};
+		
 		$.ajax({
-			url : "${pageContext.request.contextPath }/api/json", 
+			url : "${pageContext.request.contextPath }/api/post02", 
 			async : true, 
-			type : 'get',
-			dateType : 'json',
+			type : 'post',         // 요청 method
+			dateType : 'json',     // 응답 포맷
+			contentType: 'application/json', 
+			data : JSON.stringify(vo),
 			success : function(response) {
 				console.log(response);
 				if(response.result !== "success") {
@@ -36,7 +44,7 @@ $(function() {
 </script>
 </head>
 <body>
-	<h1>AJAX Test : JSON Format Data : $.ajax 함수 사용하기(get 방식)</h1>
+	<h1>AJAX Test : JSON Format Data : $.ajax 함수 사용하기(post 방식, form data)</h1>
 	
 	<button>데이터 가져오기</button>
 	<div id = "data"></div>
