@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.poscoict.ch08.controller.dto.JsonResult;
+import com.poscoict.ch08.controller.dto.XmlResult;
 import com.poscoict.ch08.controller.vo.GuestbookVo;
 
 @Controller
@@ -56,5 +57,16 @@ public class ApiController {
 		vo.setPassword("");
 		
 		return JsonResult.success(vo);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/xml")
+	public Object xml() {
+		XmlResult.GuestbookVo vo  = new XmlResult.GuestbookVo();
+		vo.setNo(1L);
+		vo.setName("둘리");
+		vo.setMessage("호이~");
+		
+		return XmlResult.success(vo); 
 	}
 }
